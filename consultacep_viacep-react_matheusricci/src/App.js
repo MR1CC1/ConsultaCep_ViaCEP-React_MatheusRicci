@@ -1,23 +1,84 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { useState, useEffect } from "react";
 
 function App() {
+
+  const [dados, setDados] = useState([]);
+
+  const url = "https://viacep.com.br/ws/01001000/json/"
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(url);
+      const data = await res.json();
+      setDados(data);
+    };
+    fetchData();
+  }, [url]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="box">
+      <div className="inputs">
+        <p>{dados.logradouro}</p>
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "80ch" },
+          }}
+          noValidate
+          autoComplete="off"
         >
-          Learn React
-        </a>
-      </header>
+          <TextField id="outlined-basic" label="CEP" variant="outlined" />
+        </Box>
+
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "80ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField id="outlined-basic" label="CEP" variant="outlined" />
+        </Box>
+
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "80ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField id="outlined-basic" label="CEP" variant="outlined" />
+        </Box>
+
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "80ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField id="outlined-basic" label="CEP" variant="outlined" />
+        </Box>
+
+        <Box
+          component="form"
+          sx={{
+            "& > :not(style)": { m: 1, width: "80ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField id="outlined-basic" label="CEP" variant="outlined" />
+        </Box>
+      </div>
     </div>
   );
 }
