@@ -1,83 +1,23 @@
 import "./App.css";
 import * as React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { useState, useEffect } from "react";
+import ApiViaCep from "./components/ApiViaCep";
 
 function App() {
-
-  const [dados, setDados] = useState([]);
-
-  const url = "https://viacep.com.br/ws/01001000/json/"
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(url);
-      const data = await res.json();
-      setDados(data);
-    };
-    fetchData();
-  }, [url]);
-
-
   return (
     <div className="box">
       <div className="inputs">
-        <p>{dados.logradouro}</p>
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "80ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField id="outlined-basic" label="CEP" variant="outlined" />
-        </Box>
-
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "80ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField id="outlined-basic" label="CEP" variant="outlined" />
-        </Box>
-
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "80ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField id="outlined-basic" label="CEP" variant="outlined" />
-        </Box>
-
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "80ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField id="outlined-basic" label="CEP" variant="outlined" />
-        </Box>
-
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "80ch" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField id="outlined-basic" label="CEP" variant="outlined" />
-        </Box>
+        <h1 style={{ textAlign: "center", color: "#bcc4cd" }}>
+          <p className="">Consulta CEP - API VIACEP</p>
+          <p>
+            <a
+              style={{ textDecoration: "underline", color: "#bcc4cd" }}
+              href="https://www.linkedin.com/in/matheus-ricci-228a06182/"
+            >
+              Linkedin Matheus Ricci
+            </a>
+          </p>
+        </h1>
+        <ApiViaCep />
       </div>
     </div>
   );

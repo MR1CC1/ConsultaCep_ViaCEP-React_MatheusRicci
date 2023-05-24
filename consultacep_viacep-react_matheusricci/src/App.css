@@ -5,13 +5,27 @@ body{
   align-items: center;
 }
 
-
 .box{
-  margin-top: 10%;
+  margin-top: 2%;
+}
+
+h1{
+  font-size: 2vw;
 }
 
 .inputs{
-  padding: 5ch;
-  border-radius: 15px;
-  background-color: #bcc4cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50px;
+  background-color: #000000;
+  padding: 50px;
+  width: 30vw;
+}
+
+.inputs input{
+  color: #bcc4cd;
+  font-weight: bold;
+  width: 30vw;
 }
